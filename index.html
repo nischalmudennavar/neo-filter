@@ -17,7 +17,8 @@
 <style>
     body{
         background: #2a2a2a;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: scroll;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,7 +26,7 @@
     }
     .grid-container{
         width:90%;
-        height:90vh;
+        height:auto;
         margin:auto;
         
 
@@ -112,6 +113,23 @@
     .menu{
         margin:auto;
         position: relative;
+    }
+
+    @media screen and (max-width:500px) {
+
+
+        .grid-item{
+            height:100px;
+            width:100px;
+        }
+
+        .btn{
+
+            height:50px;
+            width:50px;;
+        }
+        
+
     }
 </style>
 <body>
