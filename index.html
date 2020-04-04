@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script src="jquery.min.js"></script>
+    
+    <title>Document</title>
+
+   
+</head>
+
+
+
+
+<style>
+    body{
+        background: #2a2a2a;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .grid-container{
+        width:90%;
+        height:90vh;
+        margin:auto;
+        
+
+    }
+
+    .grid-item{
+
+       width:200px;
+       height:200px;
+       display: inline-block;
+        margin: 20px;
+        box-shadow: 2px 2px 15px #000,-2px -2px 10px rgb(95, 95, 95);
+        text-align: center;
+        border:10px solid #2a2a2a;
+        align-items: center;
+        border-radius: 20px;;
+       
+       
+    }
+    .menu
+    {
+        margin:auto;
+        position: relative;
+        display: flex;
+        justify-content:space-around;
+        width:100%;
+       align-items: center;
+        
+
+    }
+    .btn{
+
+        border:none;
+        width:100px;
+        height:50px;
+        background: none;
+        outline:none;
+        box-shadow: 2px 2px 15px #000,-2px -2px 10px rgb(95, 95, 95);
+        margin:30px;
+        cursor: hand;;
+        border-radius: 10px;;
+        color:white;
+
+    }
+    .black{
+
+        background: #000;
+        border-radius: 20px;;
+        color:white;
+       
+    }
+    .item{
+
+        background: #000;
+    }
+    .green{
+
+        background: green;
+        border-radius: 20px;;
+       
+    }
+    .red{
+
+        background: rgb(255, 0, 0);
+        border-radius: 20px;;
+       
+    }
+    .blue{
+
+        background: blue;
+        border-radius: 20px;;
+
+    
+    
+    }
+
+    .menu ul li{
+
+        display: inline-block;
+        text-align: center;
+        
+        
+    }
+    .menu{
+        margin:auto;
+        position: relative;
+    }
+</style>
+<body>
+
+    <div class="menu">
+        <ul>
+            <li><button class="btn" data-filter="all"> all</button></li>
+            <li><button class="btn" data-filter="black"> black</button></li>
+            <li><button class="btn" data-filter="green">green</button></li>
+            <li><button class="btn" data-filter="red">red</button></li>
+            <li><button class="btn" data-filter="blue">blue</button></li>
+        </ul>
+
+    </div>
+
+<div class="grid-container" >
+
+<div class="grid-item filter  black" ></div>
+<div class="grid-item filter  green"></div>
+<div class="grid-item filter  red" ></div>
+<div class="grid-item filter  blue" ></div>
+<div class="grid-item filter  green" ></div>
+<div class="grid-item filter  red" ></div>
+<div class="grid-item filter  black" ></div>
+<div class="grid-item filter  red" ></div>
+<div class="grid-item filter  blue"></div>
+
+
+</div>
+
+
+<script>
+    $(document).ready(function(){
+     $(".btn").click(function()
+     {
+         var value=$(this).attr("data-filter")
+         if(value=="all")
+
+         {
+             $(".filter").show("2000")
+         }
+         else{
+
+             $(".filter").not("."+value).hide("2000");
+             $(".filter").filter("."+value).show("2000");
+
+         }
+     })
+    });
+
+
+
+  </script>
+
+
+</body>
+</html>
